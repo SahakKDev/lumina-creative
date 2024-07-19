@@ -6,6 +6,7 @@
 
 :root {
   --primary-color: #fcf5e9;
+  --dark-color: #333;
 }
 
 body {
@@ -26,8 +27,52 @@ img {
   max-width: 100%;
 }
 
+/* UTILS */
 .bg-primary {
   background-color: var(--primary-color);
+  color: #333;
+}
+
+.bg-dark {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.bg-primary,
+.bg-dark {
+  padding: 0 0.3rem;
+}
+
+.section-heading {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  border: 1px solid red;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 1px solid #333;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--dark-color);
+  color: #fff;
 }
 
 /* CONTAINER */
@@ -115,9 +160,101 @@ img {
   border-radius: 10px;
 }
 
+/* FOOTER */
+.footer {
+  border-top: 1px solid #aaa;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer img {
+  width: 120px;
+  height: auto;
+}
+
+.footer h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* SERVICES */
+.services {
+  padding: 3rem 0 4rem;
+}
+
+.services-flex {
+  display: flex;
+  gap: 2rem;
+}
+
+.service-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+/* TEAM */
+.team {
+  padding: 3rem 0 4rem;
+}
+
+.team-flex {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.team img {
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 3rem 0 4rem;
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin: 2rem 0;
+}
+
+.contact input,
+.contact textarea {
+  border: none;
+  border-bottom: 1px #333 solid;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding-bottom: 1rem;
+}
+
+.contact textarea {
+  height: 200px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: 0;
+}
+
+.contact .btn {
+  width: 100%;
+}
+
 /* MEDIA QUERY */
 @media (max-width: 768px) {
-  .header .header-flex {
+  .header .header-flex,
+  .footer .footer-flex,
+  .services .services-flex,
+  .team .team-flex {
     flex-direction: column;
     gap: 1.5rem;
   }
@@ -132,5 +269,9 @@ img {
 
   .gallery-item {
     width: calc(50% - 20px);
+  }
+
+  .footer .footer-flex {
+    text-align: center;
   }
 }
